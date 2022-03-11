@@ -45,6 +45,7 @@ local plugins = {
   { -- Fuzzy Finder
     {
       'nvim-telescope/telescope.nvim',
+      cmd = 'Telescope',
       config = cfg 'telescope',
       requires = { 'nvim-lua/plenary.nvim' }
     },

@@ -30,6 +30,7 @@ return function()
     pickers = {
       find_files = {
         hidden = true,
+        previewer = false,
         no_ignore = true
       }
     }
