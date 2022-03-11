@@ -1,4 +1,4 @@
-require 'plugins'
+require 'impatient'
 require 'core.options'
 require 'core.utils'
 require 'core.keymaps'

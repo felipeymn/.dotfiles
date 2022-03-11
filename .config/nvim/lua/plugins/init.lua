@@ -3,6 +3,9 @@ local function cfg(name)
 end
 
 local plugins = {
+  {
+    'lewis6991/impatient.nvim'
+  },
   { -- Packer
     'wbthomason/packer.nvim'
   }, 
