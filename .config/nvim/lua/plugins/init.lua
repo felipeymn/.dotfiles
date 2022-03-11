@@ -67,11 +67,14 @@ local plugins = {
   },
   { -- Lsp
     'neovim/nvim-lspconfig',
-    config = cfg 'lsp',
-    requires = {
-      'williamboman/nvim-lsp-installer',
-      'jose-elias-alvarez/null-ls.nvim'
-    }
+    setup = function()
+      packer_lazy_load 'nvim-lspconfig'
+      -- reload the current file so lsp actually starts for it
+      vim.defer_fn(function()
+        vim.cmd 'if &ft == "packer" | echo "" | else | silent! e %'
+      end, 0)
+    end,
+    config = cfg 'lsp'
   },
   { -- Lualine
     'nvim-lualine/lualine.nvim',
