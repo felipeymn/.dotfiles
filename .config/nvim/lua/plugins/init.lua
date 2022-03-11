@@ -76,9 +76,17 @@ local plugins = {
     end,
     config = cfg 'lsp'
   },
-  { -- Lualine
-    'nvim-lualine/lualine.nvim',
-    config = cfg 'lualine'
+  {
+    'jose-elias-alvarez/null-ls.nvim'
+  },
+  { -- Feline
+    'feline-nvim/feline.nvim',
+    after = 'nvim-web-devicons',
+    config = cfg 'feline'
+  },
+  {
+    'numToStr/Comment.nvim',
+    config = cfg 'comment'
   },
   { -- Treesitter
     'nvim-treesitter/nvim-treesitter',
