@@ -90,6 +90,7 @@ local plugins = {
   },
   { -- Treesitter
     'nvim-treesitter/nvim-treesitter',
+    event = 'BufRead',
     config = cfg 'nvim-treesitter'
   },
   { -- Autocompletion plugin
