@@ -15,7 +15,18 @@ local plugins = {
     config = cfg 'filetype'
   },
   { -- Colors
-    'rebelot/kanagawa.nvim'
+    'rebelot/kanagawa.nvim',
+    -- after = 'packer.nvim',
+    config = cfg 'kanagawa'
+  },
+  { -- Icons
+    'kyazdani42/nvim-web-devicons',
+    config = cfg 'nvim-web-devicons'
+  },
+  {
+    'akinsho/bufferline.nvim',
+    after = "nvim-web-devicons",
+    config = cfg 'bufferline'
   },
   { -- Tree
     'kyazdani42/nvim-tree.lua',
@@ -53,10 +64,6 @@ local plugins = {
       'nvim-telescope/telescope-fzf-native.nvim',
        run = 'make'
     }
-  },
-  { -- Icons
-    'kyazdani42/nvim-web-devicons',
-    config = cfg 'nvim-web-devicons'
   },
   { -- Lsp
     'neovim/nvim-lspconfig',
