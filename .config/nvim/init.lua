@@ -1,6 +1,6 @@
 require 'impatient'
 require 'core.options'
+require 'plugins'
 require 'core.utils'
 require 'core.keymaps'
 
-vim.cmd('colorscheme kanagawa')
