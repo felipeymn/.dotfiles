@@ -23,6 +23,25 @@ local plugins = {
     cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
     config = cfg 'nvim-tree'
   },
+  {
+    'sunjon/shade.nvim',
+    config = cfg 'shade'
+  },
+  {
+    'goolord/alpha-nvim',
+    config = cfg 'alpha'
+  },
+  {
+    'steelsojka/pears.nvim',
+    config = cfg 'pears'
+  },
+  {
+    'lewis6991/gitsigns.nvim',
+    setup = function()
+      packer_lazy_load 'gitsigns.nvim'
+    end,
+    config = cfg 'gitsigns'
+  },
   { -- Fuzzy Finder
     {
       'nvim-telescope/telescope.nvim',
