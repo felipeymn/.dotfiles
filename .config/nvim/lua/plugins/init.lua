@@ -10,6 +10,10 @@ local plugins = {
     'wbthomason/packer.nvim',
     event = 'VimEnter'
   }, 
+  {
+    'nathom/filetype.nvim',
+    config = cfg 'filetype'
+  },
   { -- Colors
     'rebelot/kanagawa.nvim'
   },
