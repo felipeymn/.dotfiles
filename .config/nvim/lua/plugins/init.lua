@@ -7,7 +7,8 @@ local plugins = {
     'lewis6991/impatient.nvim'
   },
   { -- Packer
-    'wbthomason/packer.nvim'
+    'wbthomason/packer.nvim',
+    event = 'VimEnter'
   }, 
   { -- Colors
     'rebelot/kanagawa.nvim'
