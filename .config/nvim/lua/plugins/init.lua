@@ -19,6 +19,8 @@ local plugins = {
   },
   { -- Tree
     'kyazdani42/nvim-tree.lua',
+    after = 'nvim-web-devicons',
+    cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
     config = cfg 'nvim-tree'
   },
   { -- Fuzzy Finder
