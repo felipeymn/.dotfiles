@@ -47,6 +47,10 @@ local plugins = {
     config = cfg 'pears'
   },
   {
+    'windwp/nvim-ts-autotag',
+    config = cfg 'nvim-ts-autotag'
+  },
+  {
     'lewis6991/gitsigns.nvim',
     setup = function()
       packer_lazy_load 'gitsigns.nvim'
