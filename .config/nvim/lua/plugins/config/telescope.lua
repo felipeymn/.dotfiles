@@ -8,8 +8,8 @@ return function()
   telescope.setup {
     defaults = {
       layout_strategy = 'flex',
-      prompt_prefix = '❯ ',
-      selection_caret = '❯ ',
+      prompt_prefix = '  ',
+      selection_caret = ' ',
       file_ignore_patterns = { 'node_modules/.*', '.git/.*', '.angular/.*'},
       mappings = {
         i = {
