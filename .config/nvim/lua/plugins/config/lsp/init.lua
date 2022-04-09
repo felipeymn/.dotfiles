@@ -25,8 +25,8 @@ return function()
 
   local servers = { 'eslint', 'tsserver' }
 
-  local project_library_path = '/home/felipeymn/.asdf/installs/nodejs/17.4.0/.npm/lib/node_modules/@angular/language-server/home/felipeymn/.asdf/installs/nodejs/17.4.0/.npm/lib/node_modules'
-  local angularls_path = '/home/felipeymn/.asdf/installs/nodejs/17.4.0/.npm/lib/node_modules/@angular/language-server'
+  local project_library_path = '/home/felipeymn/.asdf/installs/nodejs/17.7.2/.npm/lib/node_modules/@angular/language-server/home/felipeymn/.asdf/installs/nodejs/17.4.0/.npm/lib/node_modules'
+  local angularls_path = '/home/felipeymn/.asdf/installs/nodejs/17.7.2/.npm/lib/node_modules/@angular/language-server'
   local cmd = {"node", angularls_path, "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
 
   local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
