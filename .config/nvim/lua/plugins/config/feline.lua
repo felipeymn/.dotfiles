@@ -1,30 +1,55 @@
 return function()
   local feline = safe_require 'feline'
-  local kanagawa_colors = safe_require 'kanagawa.colors'
   local vi_mode_utils = safe_require 'feline.providers.vi_mode'
   local lsp = safe_require 'feline.providers.lsp'
-  if not feline or not kanagawa_colors or not vi_mode_utils or not lsp then
+  if not feline then
     return
   end
 
-  local palette = kanagawa_colors.setup()
+  local palette = {
+   bg0 =        '#2b3339',
+   bg1 =        '#323c41',
+   bg2 =        '#3a454a',
+   bg3 =        '#445055',
+   bg4 =        '#4c555b',
+   bg5 =        '#53605c',
+   bg_visual =  '#503946',
+   bg_red =     '#4e3e43',
+   bg_green =   '#404d44',
+   bg_blue =    '#394f5a',
+   bg_yellow =  '#4a4940',
+   fg =         '#5c6a72',
+   red =        '#f85552',
+   orange =     '#f57d26',
+   yellow =     '#dfa000',
+   green =      '#8da101',
+   aqua =       '#35a77c',
+   blue =       '#3a94c5',
+   purple =     '#df69ba',
+   grey0 =      '#a6b0a0',
+   grey1 =      '#939f91',
+   grey2 =      '#829181',
+   statusline1 = '#93b259',
+   statusline2 = '#708089',
+   statusline3 = '#e66868',
+  }
 
   local vi_mode_colors = {
-    NORMAL = palette.diff.add,
-    OP = palette.diff.add,
-    SHELL = palette.diff.add,
-    VISUAL = palette.bg_light3,
-    BLOCK = palette.bg_light3,
-    LINES = palette.bg_light3,
-    REPLACE = palette.sp2,
-    ['V-REPLACE'] = palette.sp2,
-    INSERT = palette.bg_search,
-    ENTER = palette.bg_search,
-    MORE = palette.bg_search,
-    SELECT = palette.co,
-    COMMAND = palette.diff.delete,
-    TERM = palette.diff.change,
-    NONE = palette.id
+    NORMAL = palette.bg_green,
+    OP = palette.bg_green,
+    SHELL = palette.bg_green,
+    VISUAL = palette.bg_visual,
+    BLOCK = palette.bg_visual,
+    LINES = palette.bg_visual,
+    REPLACE = palette.bg_red,
+    ['V-REPLACE'] = palette.bg_red,
+    INSERT = palette.bg_blue,
+    ENTER = palette.bg_blue,
+    MORE = palette.bg_blue,
+    SELECT = palette.bg_red,
+    COMMAND = palette.bg_red,
+    TERM = palette.bg_yellow,
+    NONE = palette.bg1
   }
 
   local comps = {
@@ -44,7 +69,7 @@ return function()
       left_sep = {
         str = '  ',
         hl = {
-          bg = palette.bg,
+          bg = palette.bg0,
           fg = palette.fg
         }
       }
@@ -55,7 +80,7 @@ return function()
         icon = {
           str = ' ',
           hl = {
-            fg = palette.pp,
+            fg = palette.orange,
             bg = palette.bg_visual
           }
         },
@@ -70,7 +95,7 @@ return function()
       add = {
         provider = 'git_diff_added',
         hl = {
-          fg = palette.git.added,
+          fg = palette.green,
           bg = palette.bg_visual,
           style = 'bold'
         }
@@ -78,7 +103,7 @@ return function()
       change = {
         provider = 'git_diff_changed',
         hl = {
-          fg = palette.git.changed,
+          fg = palette.yellow,
           bg = palette.bg_visual,
           style = 'bold'
         }
@@ -86,7 +111,7 @@ return function()
       remove = {
         provider = 'git_diff_removed',
         hl = {
-          fg = palette.git.removed,
+          fg = palette.red,
           bg = palette.bg_visual,
           style = 'bold'
         },
@@ -98,20 +123,20 @@ return function()
       name = {
         provider = { name = "file_info", opts = { type = "base_only" } },
         hl = {
-          bg = palette.bg_dark,
-          fg = palette.fg_dark
+          bg = palette.bg0,
+          fg = palette.fg
         },
-        left_sep = { str = ' ', hl = { bg = palette.bg_dark }},
-        right_sep = { str = ' ', hl = { bg = palette.bg_dark }}
+        left_sep = { str = ' ', hl = { bg = palette.bg0 }},
+        right_sep = { str = ' ', hl = { bg = palette.bg0 }}
       },
       position = {
         provider = 'position',
         hl = {
-          bg = palette.bg_dark,
+          bg = palette.bg0,
           fg = palette.fg
         },
-        left_sep = { str = ' ', hl = { bg = palette.bg_dark }},
-        right_sep = { str = ' ', hl = { bg = palette.bg_dark }}
+        left_sep = { str = ' ', hl = { bg = palette.bg0 }},
+        right_sep = { str = ' ', hl = { bg = palette.bg0 }}
       }
     },
     diagnostics = {
@@ -119,38 +144,38 @@ return function()
         provider = 'diagnostic_errors',
         enabled = function () return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR) end,
         hl = {
-          bg = palette.bg_dark,
-          fg = palette.diag.error,
+          bg = palette.bg0,
+          fg = palette.red,
           style = 'bold'
         },
-        -- right_sep = { str = ' ', hl = { bg = palette.bg_dark }}
+        -- right_sep = { str = ' ', hl = { bg = palette.bg0 }}
       },
       warning = {
         provider = 'diagnostic_warnings',
         enabled = function () return lsp.diagnostics_exist(vim.diagnostic.severity.WARN) end,
         hl = {
-          bg = palette.bg_dark,
-          fg = palette.diag.warning,
+          bg = palette.bg0,
+          fg = palette.yellow,
           style = 'bold'
         },
-        -- right_sep = { str = ' ', hl = { bg = palette.bg_dark }}
+        -- right_sep = { str = ' ', hl = { bg = palette.bg0 }}
       },
       hint = {
         provider = 'diagnostic_hints',
         enabled = function () return lsp.diagnostics_exist(vim.diagnostic.severity.HINT) end,
         hl = {
-          bg = palette.bg_dark,
-          fg = palette.diag.hint,
+          bg = palette.bg0,
+          fg = palette.aqua,
           style = 'bold'
         },
-        -- right_sep = { str = ' ', hl = { bg = palette.bg_dark }}
+        -- right_sep = { str = ' ', hl = { bg = palette.bg0 }}
       },
       info = {
         provider = 'diagnostic_info',
         enabled = function () return lsp.diagnostics_exist(vim.diagnostic.severity.INFO) end,
         hl = {
-          bg = palette.bg_dark,
-          fg = palette.diag.info,
+          bg = palette.bg0,
+          fg = palette.blue,
           style = 'bold'
         },
       },
@@ -158,10 +183,10 @@ return function()
     lsp_client = {
       provider = 'lsp_client_names',
       hl = {
-        fg = palette.pp,
-        bg = palette.bg_dark
+        fg = palette.orange,
+        bg = palette.bg0
       },
-      right_sep = { str = ' ', hl = { bg = palette.bg_dark }}
+      right_sep = { str = ' ', hl = { bg = palette.bg0 }}
     }
   }
 
@@ -171,23 +196,25 @@ return function()
     inactive = {{}, {}, {}},
   }
 
-  -- left
-  components.active[1][1] = comps.vi_mode
-  components.active[1][2] = comps.file.name
-  components.active[1][3] = comps.diagnostics.error
-  components.active[1][4] = comps.diagnostics.warning
-  components.active[1][5] = comps.diagnostics.hint
-  components.active[1][6] = comps.diagnostics.info
+-- left
+components.active[1][1] = comps.vi_mode
+components.active[1][2] = comps.file.name
+components.active[1][3] = comps.diagnostics.error
+components.active[1][4] = comps.diagnostics.warning
+components.active[1][5] = comps.diagnostics.hint
+components.active[1][6] = comps.diagnostics.info
 
-  -- right
-  components.active[3][1] = comps.lsp_client
-  components.active[3][2] = comps.file.position
-  components.active[3][3] = comps.git.branch
-  components.active[3][4] = comps.git.add
-  components.active[3][5] = comps.git.change
-  components.active[3][6] = comps.git.remove
+-- right
+components.active[3][1] = comps.lsp_client
+components.active[3][2] = comps.file.position
+components.active[3][3] = comps.git.branch
+components.active[3][4] = comps.git.add
+components.active[3][5] = comps.git.change
+components.active[3][6] = comps.git.remove
 
   feline.setup {
+    default_bg = palette.bg1,
+    debault_fg = palette.fg,
     components = components,
     vi_mode_colors = vi_mode_colors
   }

@@ -14,10 +14,10 @@ local plugins = {
     'nathom/filetype.nvim',
     config = cfg 'filetype'
   },
-  { -- Colors
-    'rebelot/kanagawa.nvim',
-    -- after = 'packer.nvim',
-    config = cfg 'kanagawa'
+-- Colors
+  {
+    'sainnhe/everforest',
+    -- after = 'packer.nvim'
   },
   { -- Icons
     'kyazdani42/nvim-web-devicons',

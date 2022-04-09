@@ -12,5 +12,5 @@ return function()
   -- }
   -- kanagawa.setup({ overrides = overrides })
   kanagawa.setup()
-  vim.cmd('colorscheme kanagawa')
+  -- vim.cmd('colorscheme kanagawa')
 end
