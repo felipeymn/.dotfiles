@@ -39,6 +39,14 @@ set('n', '<c-down>', ':resize +2<cr>')
 set('n', '<c-left>', ':vertical resize -2<cr>')
 set('n', '<c-right>', ':vertical resize +2<cr>')
 
+-- Stay in indent mode
+set("v", "<", "<gv", opts)
+set("v", ">", ">gv", opts)
+
+-- Buffer switch
+set('n', 'L', ':bnext<cr>')
+set('n', 'H', ':bprev<cr>')
+
 -- Telescope shortcuts
 set('n', '<leader>ff', ':Telescope find_files<cr>')
 set('n', '<leader>fg', ':Telescope live_grep<cr>')
