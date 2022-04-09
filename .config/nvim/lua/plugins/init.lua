@@ -43,10 +43,6 @@ local plugins = {
     config = cfg 'alpha'
   },
   {
-    'steelsojka/pears.nvim',
-    config = cfg 'pears'
-  },
-  {
     'windwp/nvim-ts-autotag',
     config = cfg 'nvim-ts-autotag'
   },
