@@ -1,4 +1,4 @@
-return function()
+local function config()
   local lspconfig = safe_require 'lspconfig'
   local cmp_nvim_lsp = safe_require 'cmp_nvim_lsp'
   if not lspconfig or not cmp_nvim_lsp then
@@ -50,4 +50,24 @@ return function()
       new_config.cmd = cmd
     end,
   }
+end
+
+return function() 
+  local lsp = {
+    {
+      'jose-elias-alvarez/null-ls.nvim'
+    },
+    { -- Lsp
+      'neovim/nvim-lspconfig',
+      setup = function()
+        packer_lazy_load 'nvim-lspconfig'
+        -- reload the current file so lsp actually starts for it
+        vim.defer_fn(function()
+          vim.cmd 'if &ft == "packer" | echo "" | else | silent! e %'
+        end, 0)
+      end,
+      config = config
+    }
+  }
+  return lsp
 end

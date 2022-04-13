@@ -1,4 +1,4 @@
-return function()
+local function config()
   local feline = safe_require 'feline'
   local vi_mode_utils = safe_require 'feline.providers.vi_mode'
   local lsp = safe_require 'feline.providers.lsp'
@@ -196,21 +196,21 @@ return function()
     inactive = {{}, {}, {}},
   }
 
--- left
-components.active[1][1] = comps.vi_mode
-components.active[1][2] = comps.file.name
-components.active[1][3] = comps.diagnostics.error
-components.active[1][4] = comps.diagnostics.warning
-components.active[1][5] = comps.diagnostics.hint
-components.active[1][6] = comps.diagnostics.info
+  -- left
+  components.active[1][1] = comps.vi_mode
+  components.active[1][2] = comps.file.name
+  components.active[1][3] = comps.diagnostics.error
+  components.active[1][4] = comps.diagnostics.warning
+  components.active[1][5] = comps.diagnostics.hint
+  components.active[1][6] = comps.diagnostics.info
 
--- right
-components.active[3][1] = comps.lsp_client
-components.active[3][2] = comps.file.position
-components.active[3][3] = comps.git.branch
-components.active[3][4] = comps.git.add
-components.active[3][5] = comps.git.change
-components.active[3][6] = comps.git.remove
+  -- right
+  components.active[3][1] = comps.lsp_client
+  components.active[3][2] = comps.file.position
+  components.active[3][3] = comps.git.branch
+  components.active[3][4] = comps.git.add
+  components.active[3][5] = comps.git.change
+  components.active[3][6] = comps.git.remove
 
   feline.setup {
     default_bg = palette.bg1,
@@ -218,4 +218,13 @@ components.active[3][6] = comps.git.remove
     components = components,
     vi_mode_colors = vi_mode_colors
   }
+end
+
+return function()
+    local feline = {
+      'feline-nvim/feline.nvim',
+      after = 'nvim-web-devicons',
+      config = config
+    }
+    return feline
 end

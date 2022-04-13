@@ -1,8 +1,7 @@
 return function()
-  local nvim_ts_autotag = safe_require 'nvim-ts-autotag'
-  if not nvim_ts_autotag then
-    return
-  end
-
-  nvim_ts_autotag.setup()
+  local nvim_ts_autotag = {
+    'windwp/nvim-ts-autotag',
+    config = require 'nvim-ts-autotag'.setup()
+  }
+  return nvim_ts_autotag
 end

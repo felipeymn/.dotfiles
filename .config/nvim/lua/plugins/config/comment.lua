@@ -1,9 +1,16 @@
+
 return function()
-  local comment = safe_require 'Comment'
-  if not comment then
-    return
-  end
+  local comment = {
+    'numToStr/Comment.nvim',
+    config = function()
+      local plugin = safe_require 'Comment'
+      if not plugin then
+        return
+      end
 
-  comment.setup()
+      plugin.setup()
 
+    end
+  }
+  return comment
 end

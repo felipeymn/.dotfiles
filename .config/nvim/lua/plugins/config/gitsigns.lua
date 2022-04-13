@@ -1,4 +1,4 @@
-return function()
+local function config()
   local gitsigns = safe_require 'gitsigns'
   if not gitsigns then
     return
@@ -10,4 +10,15 @@ return function()
       set_gitsigns()
     end,
   }
+end
+
+return function()
+  local gitsigns = {
+    'lewis6991/gitsigns.nvim',
+    setup = function()
+      packer_lazy_load 'gitsigns.nvim'
+    end,
+    config = config
+  }
+  return gitsigns
 end
