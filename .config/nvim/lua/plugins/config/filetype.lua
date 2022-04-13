@@ -4,12 +4,12 @@ local function config()
     return
   end
 
-  filetype.setup()
+  filetype.setup{}
 end
 
 return function() 
   local filetype = {
-    'nathon/filetype',
+    'nathom/filetype.nvim',
     config = config
   }
   return filetype
