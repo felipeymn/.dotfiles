@@ -52,12 +52,6 @@ set('n', '<leader>fg', ':Telescope live_grep<cr>')
 set('n', '<leader>fb', ':Telescope buffers<cr>')
 set('n', '<leader>fh', ':Telescope help_tags<cr>')
 
--- Lsp
--- set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<cr>')
--- set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
--- set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
--- set('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<cr>')
-
 -- Tree Explorer
 set('n', '<leader>e', ':NvimTreeToggle<cr>')
 
@@ -83,6 +77,10 @@ set_lsp = function()
   buf_set('<leader>ca', '<cmd>lua vim.lsp.buf.code_action()')
   buf_set('gr', '<cmd>lua vim.lsp.buf.references()')
   -- buf_set('<leader>f', 'vim.lsp.buf.formatting()')
+  -- buf_set('<leader>dg', '<cmd>lua vim.diagnostic.open_float()<cr>')
+  buf_set('[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+  buf_set(']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+  buf_set('<leader>q', '<cmd>lua vim.diagnostic.setloclist()<cr>')
 end
 
 set_gitsigns = function ()

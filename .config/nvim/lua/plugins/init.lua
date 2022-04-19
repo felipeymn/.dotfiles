@@ -16,6 +16,7 @@ local plugins = {
   'alpha',
   'gitsigns',
   'lsp',
+  'lsp.lsp-installer',
   'telescope',
   'nvim-treesitter',
   'feline',
