@@ -7,7 +7,7 @@ local function config()
   filetype.setup{}
 end
 
-return function() 
+return function()
   local filetype = {
     'nathom/filetype.nvim',
     config = config

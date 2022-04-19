@@ -51,7 +51,7 @@ end
 return function()
   local alpha = {
     'goolord/alpha-nvim',
-    config = config 
+    config = config
   }
   return alpha
 end

@@ -1,6 +1,6 @@
 return function()
   local packer = {
-    'wbthomason/packer.nvim',
+    'wbthomason/packer.nvim'
   }
   return packer
 end

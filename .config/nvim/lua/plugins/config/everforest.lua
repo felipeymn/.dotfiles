@@ -1,6 +1,6 @@
 return function()
   local everforest = {
-    'sainnhe/everforest',
+    'sainnhe/everforest'
   }
   return everforest
 end
