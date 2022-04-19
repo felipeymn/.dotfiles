@@ -30,7 +30,7 @@ local function config()
     pickers = {
       find_files = {
         hidden = true,
-        previewer = false,
+        -- previewer = false,
         no_ignore = true
       }
     }
