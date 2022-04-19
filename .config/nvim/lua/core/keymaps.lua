@@ -21,7 +21,6 @@ set('i', '<up>', '<nop>')
 set('i', '<down>', '<nop>')
 set('i', '<left>', '<nop>')
 set('i', '<right>', '<nop>')
-
 set('n', '<up>', '<nop>')
 set('n', '<down>', '<nop>')
 set('n', '<left>', '<nop>')
@@ -40,8 +39,8 @@ set('n', '<c-left>', ':vertical resize -2<cr>')
 set('n', '<c-right>', ':vertical resize +2<cr>')
 
 -- Stay in indent mode
-set("v", "<", "<gv", opts)
-set("v", ">", ">gv", opts)
+set("v", "<", "<gv")
+set("v", ">", ">gv")
 
 -- Buffer switch
 set('n', 'L', ':bnext<cr>')
@@ -87,8 +86,8 @@ set_lsp = function()
 end
 
 set_gitsigns = function ()
-  buf_set('<leader>hs', ':Gitsigns stage_hunk') 
-  buf_set('<leader>hu', ':Gitsigns undo_stage_hunk') 
-  buf_set('<leader>hr', ':Gitsigns reset_hunk') 
-  buf_set('<leader>hp', ':Gitsigns preview_hunk') 
+  buf_set('<leader>hs', ':Gitsigns stage_hunk')
+  buf_set('<leader>hu', ':Gitsigns undo_stage_hunk')
+  buf_set('<leader>hr', ':Gitsigns reset_hunk')
+  buf_set('<leader>hp', ':Gitsigns preview_hunk')
 end
