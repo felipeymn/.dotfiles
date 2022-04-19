@@ -1,14 +1,14 @@
 local function config()
   local cmp = safe_require 'cmp'
-  if not cmp then 
+  if not cmp then
     return
   end
-  
+
   local snip_status_ok, luasnip = pcall(require, "luasnip")
   if not snip_status_ok then
     return
   end
-  
+
   require("luasnip/loaders/from_vscode").lazy_load()
 
   local kind_icons = {
@@ -82,9 +82,6 @@ local function config()
         })[entry.source.name]
         return vim_item
       end,
-    },
-    documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     },
     experimental = {
       ghost_text = true,

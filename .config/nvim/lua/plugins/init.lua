@@ -20,7 +20,7 @@ local plugins = {
   'telescope',
   'nvim-treesitter',
   'feline',
-  'nvim-cmp',
+  'cmp',
   'cmp.buffer',
   'cmp.path',
   'cmp.cmdline',
