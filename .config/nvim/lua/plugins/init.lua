@@ -10,7 +10,6 @@ local plugins = {
   'nvim-ts-autotag',
   'shade',
   'comment',
-  'filetype',
   'nvim-web-devicons',
   'nvim-tree',
   'alpha',
