@@ -19,6 +19,7 @@ local plugins = {
   'telescope',
   'nvim-treesitter',
   'lualine',
+  'toggleterm',
   'cmp',
   'cmp.buffer',
   'cmp.path',
@@ -26,6 +27,7 @@ local plugins = {
   'cmp.luasnip',
   'snippets.luasnip',
   'snippets.friendly-snippets',
+  'neorg'
 }
 
 local fn = vim.fn
