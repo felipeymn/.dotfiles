@@ -19,6 +19,7 @@ o.showmode = false
 o.signcolumn = 'yes'
 o.termguicolors = true
 o.wrap = false
+o.laststatus = 3
 
 -- Backups
 o.backup = false
