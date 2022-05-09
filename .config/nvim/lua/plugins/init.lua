@@ -18,7 +18,7 @@ local plugins = {
   'lsp.lsp-installer',
   'telescope',
   'nvim-treesitter',
-  'feline',
+  'lualine',
   'cmp',
   'cmp.buffer',
   'cmp.path',
