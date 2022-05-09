@@ -9,6 +9,11 @@ local function config()
       on_attach = require("plugins.config.lsp.handlers").on_attach,
       capabilities = require("plugins.config.lsp.handlers").capabilities,
     }
+	 if server.name == "sumneko_lua" then
+	 	local sumneko_opts = require("plugins.config.lsp.settings.sumneko_lua")
+	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+	 end
+
     server:setup(opts)
   end)
 end
