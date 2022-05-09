@@ -8,7 +8,6 @@ local function config()
   nvim_tree.setup {
     disable_netrw = true,
     ignore_ft_on_setup = { 'dashboard' },
-    auto_close = false
   }
 end
 

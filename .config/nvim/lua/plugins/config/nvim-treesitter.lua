@@ -14,7 +14,7 @@ end
 return function()
   local treesitter = {
     'nvim-treesitter/nvim-treesitter',
-    -- event = 'BufRead',
+    event = 'BufRead',
     config = config
   }
   return treesitter
